@@ -9,6 +9,7 @@ contract To_do_app {
         uint256 id;
         string name;
         string email;
+        string profile;
     }
 
     struct Task {
@@ -40,7 +41,7 @@ contract To_do_app {
             "100"
         );
 
-        createUser("jonathan", "jonathan@gmail.com");
+        createUser("jonathan", "jonathan@gmail.com", "profile");
     }
 
     function createTasks(
@@ -70,11 +71,12 @@ contract To_do_app {
         );
     }
 
-    function createUser(string memory _name, string memory _email)
-        public
-        payable
-    {
+    function createUser(
+        string memory _name,
+        string memory _email,
+        string memory _profile
+    ) public payable {
         userCount++;
-        users[userCount] = User(userCount, _name, _email);
+        users[userCount] = User(userCount, _name, _email, _profile);
     }
 }
