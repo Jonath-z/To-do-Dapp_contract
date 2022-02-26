@@ -2,15 +2,8 @@
 pragma solidity >=0.4.22 <0.9.0;
 
 contract To_do_app {
-    uint256 public taskCount = 0;
-    uint256 public userCount = 0;
-
-    struct User {
-        uint256 id;
-        string name;
-        string email;
-        string profile;
-    }
+    uint256 public taskCount = 1;
+    uint256 public userCount = 1;
 
     struct Task {
         uint256 id;
@@ -26,8 +19,15 @@ contract To_do_app {
         string progress;
     }
 
-    mapping(uint256 => Task) public tasks;
+    struct User {
+        uint256 id;
+        string name;
+        string email;
+        string profile;
+    }
+
     mapping(uint256 => User) public users;
+    mapping(uint256 => Task) public tasks;
 
     constructor() {
         createTasks(
@@ -52,10 +52,9 @@ contract To_do_app {
         string memory _owner_name,
         string memory _owner_email,
         string memory _date,
-        string memory _progress
+        string memory _progress // uint256 _id
     ) public payable {
         taskCount++;
-
         tasks[taskCount] = Task(
             taskCount,
             _title,
