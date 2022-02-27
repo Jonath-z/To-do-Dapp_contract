@@ -2,8 +2,8 @@
 pragma solidity >=0.4.22 <0.9.0;
 
 contract To_do_app {
-    uint256 public taskCount = 1;
-    uint256 public userCount = 1;
+    uint256 public taskCount = 0;
+    uint256 public userCount = 0;
 
     struct Task {
         uint256 id;
