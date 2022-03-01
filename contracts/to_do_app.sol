@@ -78,4 +78,8 @@ contract To_do_app {
         userCount++;
         users[userCount] = User(userCount, _name, _email, _profile);
     }
+
+    function updateTaskStatus(uint256 _task_id) public payable {
+        tasks[_task_id].completed = true;
+    }
 }
