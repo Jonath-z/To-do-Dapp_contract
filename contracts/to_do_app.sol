@@ -80,6 +80,6 @@ contract To_do_app {
     }
 
     function updateTaskStatus(uint256 _task_id) public payable {
-        tasks[_task_id].completed = true;
+        tasks[_task_id].completed = !tasks[_task_id].completed;
     }
 }
