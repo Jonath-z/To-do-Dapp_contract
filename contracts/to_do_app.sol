@@ -82,4 +82,8 @@ contract To_do_app {
     function updateTaskStatus(uint256 _task_id) public payable {
         tasks[_task_id].completed = !tasks[_task_id].completed;
     }
+
+    function deleteTask(uint256 _task_id) public payable {
+        delete tasks[_task_id];
+    }
 }
